@@ -13,3 +13,16 @@ describe('generateMessage', () => {
         generateMessage()
     })
 });
+
+describe('generateLocation', () => {
+    it('should generate location object', () =>{
+        let from = 'me';
+        let latitude = 48.7305384;
+        let longitude = 37.6141806;
+        let location = generateLocationMessage(from, latitude, longitude);
+        expect(location.createdAt).toBeA('number');
+        expect(location).toInclude({from, latitude, longitude});
+
+        generateMessage()
+    })
+});
